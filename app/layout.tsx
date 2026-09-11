@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Priyanshu | Personal Space',
-  description: "Priyanshu's personal space. About, work, education, and a little more along the way.",
+  title: 'Priyanshu Mishra',
+  description: 'Priyanshu Mishra. About, work, education, and writing.',
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

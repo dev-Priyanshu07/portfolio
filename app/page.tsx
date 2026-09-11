@@ -1,4 +1,4 @@
-import { ArrowUpRight, BookOpen, Home, Mail, UserRound } from 'lucide-react';
+import { BookOpen, Home, Mail, UserRound } from 'lucide-react';
 import { FaGithub, FaLinkedin, FaXTwitter } from 'react-icons/fa6';
 import { profile } from './profile';
 import { ThemeToggle } from './theme-toggle';
@@ -17,11 +17,11 @@ export default function Page() {
       <header className="masthead"><a href="#home" aria-label="Priyanshu, home">p<span>.</span></a></header>
       <section className="intro" aria-labelledby="greeting">
         <div className="intro-copy"><h1 id="greeting">hi, priyanshu here<span className="period">.</span></h1></div>
-        <div className="portrait">{profile.photo ? <img src={profile.photo} alt="Priyanshu" width="88" height="88" fetchPriority="high" /> : <UserRound size={32} strokeWidth={1.2} aria-label="Profile photo placeholder" />}</div>
+        <div className="portrait">{profile.photo ? <img src={profile.photo} alt={profile.photoAlt} width="88" height="88" fetchPriority="high" /> : <UserRound size={32} strokeWidth={1.2} aria-label="Profile photo placeholder" />}</div>
       </section>
       <section className="section" id="about" aria-labelledby="about-title">
         <div className="section-label"><h2 id="about-title">about</h2></div>
-        <div><p className="about-copy">{profile.about || 'a little about me, coming soon.'}</p>{profile.aboutNote && <p className="subtle">{profile.aboutNote}</p>}<p className="about-copy about-followup">if you want to know more about me, here are the <a className="text-link" href={profile.blog}>things that i carry a part of</a>.</p></div>
+        <div><p className="about-copy about-lines">{profile.about || 'a little about me, coming soon.'}</p>{profile.aboutNote && <p className="subtle">{profile.aboutNote}</p>}<p className="about-copy about-followup">if you want to know more about me,<br />here are the <a className="text-link" href={profile.blog}>things that i carry a part of</a>.</p></div>
       </section>
       <section className="section" aria-labelledby="work-title">
         <div className="section-label"><h2 id="work-title">work</h2></div>
@@ -38,7 +38,7 @@ export default function Page() {
             {['spring boot', 'java', 'postgres', 'c++', 'can do 30 pushups', 'can go to movies alone'].map(skill => <li className="skill-tag" key={skill}>{skill}</li>)}
           </ul>
         </section>
-        <div className="footer"><a href="#home">back to top <ArrowUpRight size={14} aria-hidden="true" /></a></div>
+        <div className="footer"><a href={profile.socials.twitter} target="_blank" rel="noopener noreferrer" aria-label="Say hello on X"><span>say hello on</span><FaXTwitter size={14} aria-hidden="true" /></a></div>
       </footer>
     </main>
     <nav className="dock" aria-label="Main navigation">
